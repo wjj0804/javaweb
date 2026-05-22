@@ -5,7 +5,7 @@
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>3.2.0</version>
+    <version>3.5.7</version>
     <relativePath/>
   </parent>
 
@@ -21,47 +21,50 @@
     <java.version>17</java.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-    <redisson.version>3.24.3</redisson.version>
-    <rocketmq.version>2.2.3</rocketmq.version>
-    <xxl-job.version>2.4.0</xxl-job.version>
-    <hutool.version>5.8.23</hutool.version>
-    <fastjson2.version>2.0.43</fastjson2.version>
+    <redisson.version>3.43.0</redisson.version>
+    <hutool.version>5.8.40</hutool.version>
+    <fastjson2.version>2.0.57</fastjson2.version>
+    <poi.version>5.4.1</poi.version>
+    <commons-compress.version>1.27.1</commons-compress.version>
+    <springdoc.version>2.8.13</springdoc.version>
+    <mybatis-spring-boot.version>3.0.4</mybatis-spring-boot.version>
+    <pagehelper-spring-boot.version>2.1.0</pagehelper-spring-boot.version>
   </properties>
 
   <dependencies>
-
+    <!-- 火山引擎 TOS / 通用 SDK -->
     <dependency>
       <groupId>com.volcengine</groupId>
       <artifactId>ve-tos-java-sdk</artifactId>
       <version>2.8.8</version>
     </dependency>
 
-
     <dependency>
       <groupId>com.volcengine</groupId>
       <artifactId>volc-sdk-java</artifactId>
       <version>1.0.267</version>
     </dependency>
+
+    <!-- Redisson，升级版本规避旧版反序列化和 Netty 传递依赖风险 -->
     <dependency>
       <groupId>org.redisson</groupId>
       <artifactId>redisson-spring-boot-starter</artifactId>
-      <version>3.13.6</version>
+      <version>${redisson.version}</version>
     </dependency>
 
+    <!-- 易宝支付 SDK -->
     <dependency>
       <groupId>com.yeepay.yop.sdk</groupId>
       <artifactId>yop-java-sdk</artifactId>
-      <version>4.4.15</version> <!-- Please replace with the latest stable version -->
+      <version>4.4.15</version>
     </dependency>
 
-    <!--  下方两个软算法包可以根据需要引入其一或者全部 -->
-    <!--  1.国际软算法(RSA) -->
     <dependency>
       <groupId>com.yeepay.yop.sdk</groupId>
       <artifactId>yop-java-sdk-crypto-inter</artifactId>
       <version>4.4.15</version>
     </dependency>
-    <!--  2.商密软算法(SM2) -->
+
     <dependency>
       <groupId>com.yeepay.yop.sdk</groupId>
       <artifactId>yop-java-sdk-crypto-gm</artifactId>
@@ -72,32 +75,52 @@
     <dependency>
       <groupId>com.alibaba</groupId>
       <artifactId>easyexcel</artifactId>
-      <version>3.3.2</version>
+      <version>3.3.4</version>
       <exclusions>
         <exclusion>
-          <artifactId>poi-ooxml-schemas</artifactId>
           <groupId>org.apache.poi</groupId>
+          <artifactId>poi-ooxml-schemas</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.apache.poi</groupId>
+          <artifactId>poi</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.apache.poi</groupId>
+          <artifactId>poi-ooxml</artifactId>
         </exclusion>
       </exclusions>
     </dependency>
 
-    <!-- Excel导出 -->
+    <!-- Excel 导出 -->
     <dependency>
       <groupId>org.apache.poi</groupId>
       <artifactId>poi-ooxml</artifactId>
-      <version>5.2.5</version>
+      <version>${poi.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-compress</artifactId>
+      <version>${commons-compress.version}</version>
     </dependency>
 
     <dependency>
       <groupId>com.google.guava</groupId>
       <artifactId>guava</artifactId>
-      <version>33.3.0-jre</version>
+      <version>33.4.8-jre</version>
     </dependency>
 
     <dependency>
       <groupId>com.larksuite.oapi</groupId>
       <artifactId>oapi-sdk</artifactId>
       <version>2.5.3</version>
+      <exclusions>
+        <exclusion>
+          <groupId>org.apache.tika</groupId>
+          <artifactId>tika-core</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
 
     <dependency>
@@ -105,21 +128,17 @@
       <artifactId>spring-boot-starter-data-redis</artifactId>
     </dependency>
 
-
-
     <dependency>
       <groupId>com.github.pagehelper</groupId>
       <artifactId>pagehelper-spring-boot-starter</artifactId>
-      <version>2.0.0</version>
+      <version>${pagehelper-spring-boot.version}</version>
     </dependency>
-
 
     <dependency>
       <groupId>org.springdoc</groupId>
       <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
-      <version>2.1.0</version>
+      <version>${springdoc.version}</version>
     </dependency>
-
 
     <!-- Spring Boot Web -->
     <dependency>
@@ -137,7 +156,6 @@
       <groupId>org.springframework.security</groupId>
       <artifactId>spring-security-crypto</artifactId>
     </dependency>
-
 
     <!-- Spring Boot AOP -->
     <dependency>
@@ -169,9 +187,8 @@
     <dependency>
       <groupId>org.mybatis.spring.boot</groupId>
       <artifactId>mybatis-spring-boot-starter</artifactId>
-      <version>3.0.3</version>
+      <version>${mybatis-spring-boot.version}</version>
     </dependency>
-
 
     <!-- Hutool -->
     <dependency>
