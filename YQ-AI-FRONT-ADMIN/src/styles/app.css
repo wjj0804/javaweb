@@ -1,0 +1,216 @@
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: #eef0f4;
+  color: #111827;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.app-shell {
+  min-height: 100%;
+  background: #eef0f4;
+}
+
+.app-sider {
+  border-right: 1px solid #e6e8ec;
+  box-shadow: 8px 0 24px rgb(15 23 42 / 4%);
+}
+
+.brand {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 20px 18px;
+}
+
+.brand-mark {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  color: #fff;
+  font-weight: 700;
+  background: #1677ff;
+  border-radius: 6px;
+}
+
+.brand h4 {
+  margin: 0;
+  font-size: 16px;
+  line-height: 22px;
+  white-space: nowrap;
+}
+
+.app-content {
+  padding: 26px 28px;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.page-surface {
+  min-height: calc(100vh - 52px);
+  padding: 28px 28px 22px;
+  background: #fff;
+  border: 1px solid #edf0f4;
+  border-radius: 18px;
+  box-shadow: 0 18px 42px rgb(15 23 42 / 8%);
+}
+
+.page-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  min-height: 46px;
+}
+
+.page-title {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 30px;
+}
+
+.page-description {
+  margin: 6px 0 0;
+  color: #7b8494;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.toolbar {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 0 2px;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+}
+
+.toolbar-left {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.table-panel {
+  padding: 14px;
+  background: #fff;
+  border: 1px solid #edf0f5;
+  border-radius: 6px;
+}
+
+.table-panel-plain {
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  border-radius: 0;
+}
+
+.table-action {
+  height: auto;
+  padding: 0;
+  font-weight: 500;
+}
+
+.page-surface .ant-btn-primary {
+  background: #006fbc;
+  box-shadow: 0 4px 10px rgb(0 111 188 / 24%);
+}
+
+.page-surface .ant-btn {
+  border-radius: 10px;
+}
+
+.page-surface .ant-input,
+.page-surface .ant-select-selector {
+  border-color: #dce1e8 !important;
+  border-radius: 12px !important;
+  box-shadow: inset 0 1px 2px rgb(15 23 42 / 4%);
+}
+
+.page-surface .ant-table {
+  color: #111827;
+}
+
+.page-surface .ant-table-wrapper .ant-table-thead > tr > th {
+  height: 56px;
+  color: #111827;
+  font-weight: 700;
+  background: #fff;
+  border-bottom: 1px solid #eef1f5;
+}
+
+.page-surface .ant-table-wrapper .ant-table-tbody > tr > td {
+  height: 62px;
+  border-bottom: 1px solid #eef1f5;
+}
+
+.page-surface .ant-table-wrapper .ant-table-tbody > tr:hover > td {
+  background: #f8fbff;
+}
+
+.page-surface .ant-pagination {
+  margin: 18px 0 0;
+}
+
+.page-surface .ant-pagination .ant-pagination-item {
+  border-radius: 12px;
+}
+
+.page-surface .ant-pagination .ant-pagination-item-active {
+  border-color: #006fbc;
+}
+
+.page-surface .ant-tag {
+  border-radius: 8px;
+}
+
+.permission-tree-table .permission-id-column {
+  white-space: nowrap;
+}
+
+.permission-tree-table .ant-table-row-expand-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  margin-right: 8px;
+  color: #64748b;
+  vertical-align: middle;
+  background: #fff;
+  border: 1px solid #d8dee8;
+  border-radius: 50%;
+  box-shadow: 0 1px 2px rgb(15 23 42 / 8%);
+}
+
+.permission-tree-table .ant-table-row-expand-icon:hover {
+  color: #006fbc;
+  border-color: #9cc6e7;
+}
+
+.permission-tree-table .ant-table-row-expand-icon-spaced {
+  width: 18px;
+  margin-right: 8px;
+  visibility: hidden;
+}
+
+.permission-id-text {
+  display: inline-block;
+  min-width: 28px;
+  font-variant-numeric: tabular-nums;
+  line-height: 18px;
+  vertical-align: middle;
+}

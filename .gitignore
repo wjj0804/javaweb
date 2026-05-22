@@ -35,5 +35,19 @@ build/
 ### VS Code ###
 .vscode/
 
+### Frontend local artifacts ###
+node_modules/
+.npm-cache/
+.vite/
+*.tsbuildinfo
+vite.config.js
+vite.config.d.ts
+YQ-AI-FRONT-ADMIN/node_modules/
+YQ-AI-FRONT-ADMIN/.npm-cache/
+YQ-AI-FRONT-ADMIN/dist/
+YQ-AI-FRONT-ADMIN/*.tsbuildinfo
+YQ-AI-FRONT-ADMIN/vite.config.js
+YQ-AI-FRONT-ADMIN/vite.config.d.ts
+
 ### Mac OS ###
 .DS_Store
