@@ -72,7 +72,7 @@ create table sys_role_permission (
 -- 初始化超级管理员用户，默认密码为 admin123。
 insert into sys_user(id, username, nickname, password, phone, email, status)
 values
-  (1, 'admin', '超级管理员', '$2a$10$7m6JOUMQhc4iUqpy6AOuEeWabSWNJXCBLPy4Q5YHA5YAvSVEYF7vi', '13800000000', 'admin@yq-ai.local', 1);
+  (1, 'admin', '超级管理员', 'admin123', '13800000000', 'admin@yq-ai.local', 1);
 
 -- 初始化系统内置角色。
 insert into sys_role(id, role_code, role_name, description, status)
