@@ -33,3 +33,12 @@ springdoc:
     enabled: true
   swagger-ui:
     path: /swagger-ui.html
+
+yq:
+  jwt:
+    # 生产环境建议通过环境变量覆盖，密钥长度和复杂度需要足够高。
+    secret: ${YQ_JWT_SECRET:yq-ai-admin-jwt-secret-change-me}
+    # token 有效期，单位秒。
+    expire-seconds: ${YQ_JWT_EXPIRE_SECONDS:7200}
+    # 前端请求时携带 token 的请求头名称。
+    header: Authorization

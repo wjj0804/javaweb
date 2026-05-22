@@ -17,7 +17,6 @@ import cn.yq.system.mapper.SysUserEntityMapper;
 import cn.yq.system.service.UserService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
@@ -31,7 +30,6 @@ public class UserServiceImpl implements UserService {
     private final SysRoleEntityMapper roleMapper;
     private final SysPermissionEntityMapper permissionMapper;
     private final RelationMapper relationMapper;
-    private final BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
     public UserServiceImpl(
             SysUserEntityMapper userMapper,
@@ -65,7 +63,7 @@ public class UserServiceImpl implements UserService {
         }
         SysUserEntity user = new SysUserEntity();
         user.setUsername(request.username());
-        user.setPassword(passwordEncoder.encode(request.password()));
+        user.setPassword(request.password());
         user.setNickname(request.nickname());
         user.setPhone(request.phone());
         user.setEmail(request.email());
@@ -80,7 +78,7 @@ public class UserServiceImpl implements UserService {
     public UserDetailRes update(Long id, UserUpdateReq request) {
         SysUserEntity user = requireUser(id);
         if (StringUtils.hasText(request.password())) {
-            user.setPassword(passwordEncoder.encode(request.password()));
+            user.setPassword(request.password());
         }
         user.setNickname(request.nickname());
         user.setPhone(request.phone());
